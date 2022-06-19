@@ -1,8 +1,10 @@
 import ScheduleList from '../components/ScheduleList';
 import { client } from '../lib/client';
+import { IScheduleListProps } from '../types/ScheduleTypes';
 
 export const getServerSideProps = async () => {
-  const query = `*[_type == "schedule"] { 
+  const query = `*[_type == "schedule"] | order(dateTime) { 
+    "id": _id,
     activity,
     dateTime,
     "speakerName": speaker->name
@@ -13,7 +15,7 @@ export const getServerSideProps = async () => {
   };
 };
 
-export function Schedule({ schedule }) {
+export const Schedule = ({ schedule }: IScheduleListProps) => {
   return (
     <>
       <h1>Schedule Page</h1>

@@ -1,10 +1,21 @@
-function ScheduleList({ schedule }) {
+import { IScheduleListProps } from '../types/ScheduleTypes';
+
+const ScheduleList = ({ schedule }: IScheduleListProps) => {
+  console.log(schedule);
   return (
     <>
       <h1>Schedule Component</h1>
-      <div style={{ whiteSpace: 'pre-wrap' }}>
-        {JSON.stringify(schedule)}
-      </div>
+      {schedule.map((details) => {
+        return (
+          <div key={details.id}>
+            <ul>
+              <li>{details.activity}</li>
+              <li>{details.dateTime}</li>
+              <li>{details.speakerName}</li>
+            </ul>
+          </div>
+        )
+      })}
     </>
   );
 }

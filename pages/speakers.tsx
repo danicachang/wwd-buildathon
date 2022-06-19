@@ -1,9 +1,17 @@
 import SpeakersList from '../components/SpeakersList';
 import { client } from '../lib/client';
+import { ISpeakersListProps } from '../types/SpeakerTypes';
 
 export const getServerSideProps = async () => {
   const query = `*[_type == "speaker"] { 
-    name, role
+    "id": _id, 
+    image,
+    name, 
+    role,
+    description,
+    "email": socials.email,
+    "linkedin": socials.linkedin,
+    "website": socials.website
     }`;
   const speakers = await client.fetch(query);
   return {
@@ -11,7 +19,7 @@ export const getServerSideProps = async () => {
   };
 };
 
-function Speakers({ speakers }) {
+const Speakers = ({ speakers }: ISpeakersListProps) => {
   return (
     <>
       <h1>Speaker Page</h1>
