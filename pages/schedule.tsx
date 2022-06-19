@@ -2,7 +2,7 @@ import ScheduleList from '../components/ScheduleList';
 import { client } from '../lib/client';
 import { IScheduleListProps } from '../types/ScheduleTypes';
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const query = `*[_type == "schedule"] | order(dateTime) { 
     "id": _id,
     activity,

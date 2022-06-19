@@ -5,7 +5,7 @@ import { client } from '../lib/client';
 import styles from '../styles/Home.module.css';
 import { IPricingTableTypeProps } from '../types/PricingTypes';
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const query = `*[_type == "ticket"] { 
     "id": _id,
     title,

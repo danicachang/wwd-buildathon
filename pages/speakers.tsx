@@ -2,7 +2,7 @@ import SpeakersList from '../components/SpeakersList';
 import { client } from '../lib/client';
 import { ISpeakersListProps } from '../types/SpeakerTypes';
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const query = `*[_type == "speaker"] { 
     "id": _id, 
     image,
