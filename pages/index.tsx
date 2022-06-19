@@ -1,9 +1,26 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { client } from '../lib/client';
 import styles from '../styles/Home.module.css';
+import { IPricingTableTypeProps } from '../types/PricingTypes';
 
-export default function Home() {
+export const getServerSideProps = async () => {
+  const query = `*[_type == "ticket"] { 
+    "id": _id,
+    title,
+    pricing,
+    dateFrom,
+    dateTill
+    }`;
+  const pricingTable = await client.fetch(query);
+  return {
+    props: { pricingTable },
+  };
+};
+
+const Home = ({ pricingTable }: IPricingTableTypeProps) => {
+  console.log(pricingTable)
   return (
     <div className={styles.container}>
       <Head>
@@ -17,12 +34,24 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Buildathon!</a>
         </h1>
 
+        <h2>Click here please</h2>
         <Link href="/schedule">
           <a>Schedule</a>
         </Link>
         <Link href="/speakers">
           <a>Speakers</a>
         </Link>
+        <h1>Pricing</h1>
+        {pricingTable.map((category) => (
+          <div key={category.id}>
+            <ul>
+              <li>{category.title}</li>
+              <li>${category.pricing}</li>
+              <li>{category.dateFrom}</li>
+              <li>{category.dateTill}</li>
+            </ul>
+          </div>
+        ))}
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
@@ -74,3 +103,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;
