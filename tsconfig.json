@@ -25,7 +25,6 @@
     "**/*.tsx"
   ],
   "exclude": [
-    "node_modules",
-    "**/client.ts"
+    "node_modules"
   ]
 }
