@@ -24,7 +24,7 @@ const Home = ({pricingTable}: IPricingTableTypeProps) => {
       </Head>
 
       <main className={styles.main}>
-        {!pricingTable.length > 0 && <p>No pets to show</p>}
+        {pricingTable.length < 0 && <p>No pets to show</p>}
         {pricingTable.length > 0 && (
           <div>
             <pre>{JSON.stringify(pricingTable, null, 2)}</pre>
