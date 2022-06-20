@@ -2,6 +2,15 @@ import ScheduleList from '../components/ScheduleList';
 import { client } from '../lib/client';
 import { IScheduleListProps } from '../types/ScheduleTypes';
 
+export const Schedule = ({ schedule }: IScheduleListProps) => {
+  return (
+    <>
+      <h1>Schedule Page</h1>
+      <ScheduleList schedule={schedule} />
+    </>
+  );
+}
+
 export const getStaticProps = async () => {
   const query = `*[_type == "schedule"] | order(dateTime) { 
     "id": _id,
@@ -14,14 +23,4 @@ export const getStaticProps = async () => {
     props: { schedule },
   };
 };
-
-export const Schedule = ({ schedule }: IScheduleListProps) => {
-  return (
-    <>
-      <h1>Schedule Page</h1>
-      <ScheduleList schedule={schedule} />
-    </>
-  );
-}
-
 export default Schedule;
