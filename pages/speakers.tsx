@@ -11,7 +11,7 @@ const Speakers = ({ speakers }: ISpeakersListProps) => {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const query = `*[_type == "speaker"] { 
     "id": _id, 
     image,
