@@ -2,8 +2,17 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
+import { createClient } from "next-sanity";
 
-const Home = () => {
+const client = createClient({
+  projectId: "w34m7f7u",
+  dataset: "production",
+  apiVersion: "2022-06-20",
+  useCdn: false,
+  token: process.env.NEXT_PUBLIC_SANITY_TOKEN
+});
+
+const Home = ({pricingTable}) => {
 
   return (
     <div className={styles.container}>
@@ -14,9 +23,12 @@ const Home = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Buildathon!</a>
-        </h1>
+        {!pricingTable.length > 0 && <p>No pets to show</p>}
+        {pricingTable.length > 0 && (
+          <div>
+            <pre>{JSON.stringify(pricingTable, null, 2)}</pre>
+          </div>
+        )}
 
         <h2>Click links below</h2>
         <Link href="/schedule">
@@ -30,21 +42,22 @@ const Home = () => {
         </Link>
         
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
 
 export default Home;
+
+export const getStaticProps = async () => {
+  const query = `*[_type == "ticket"] | order(dateFrom) { 
+    "id": _id,
+    title,
+    pricing,
+    dateFrom,
+    dateTill
+    }`;
+  const pricingTable = await client.fetch(query);
+  return {
+    props: { pricingTable },
+  };
+};
