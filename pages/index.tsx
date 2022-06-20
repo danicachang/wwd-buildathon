@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css';
 import { IPricingTableTypeProps } from '../types/PricingTypes';
 
 export const getServerSideProps = async () => {
-  const query = `*[_type == "ticket"] { 
+  const query = `*[_type == "ticket"] | order(dateFrom) { 
     "id": _id,
     title,
     pricing,

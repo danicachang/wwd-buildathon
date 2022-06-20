@@ -1,5 +1,7 @@
 import { ISpeakersListProps } from "../types/SpeakerTypes";
 
+import Image from 'next/image';
+import { urlFor } from '../lib/client';
 const SpeakersList = ({ speakers }: ISpeakersListProps) => {
   console.log(speakers)
   return (
@@ -9,7 +11,8 @@ const SpeakersList = ({ speakers }: ISpeakersListProps) => {
         return (
           <div key={speaker.id}>
             <ul>
-              <li>{speaker.image}</li>
+              <Image src={urlFor(speaker.image)
+                .url()} width="320" height="320" />
               <li>{speaker.name}</li>
               <li>{speaker.role}</li>
               <li>{speaker.description}</li>
