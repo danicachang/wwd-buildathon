@@ -20,7 +20,7 @@ const Pricing = ({ pricingTable }: IPricingTableTypeProps) => {
   )
 }
             
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const query = `*[_type == "ticket"] | order(dateFrom) { 
     "id": _id,
     title,

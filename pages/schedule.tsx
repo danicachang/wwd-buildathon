@@ -11,7 +11,7 @@ export const Schedule = ({ schedule }: IScheduleListProps) => {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const query = `*[_type == "schedule"] | order(dateTime) { 
     "id": _id,
     activity,
