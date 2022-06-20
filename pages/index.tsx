@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import { createClient } from "next-sanity";
+import { IPricingTableTypeProps } from '../types/PricingTypes';
 
 const client = createClient({
   projectId: "w34m7f7u",
@@ -12,7 +13,7 @@ const client = createClient({
   token: process.env.NEXT_PUBLIC_SANITY_TOKEN
 });
 
-const Home = ({pricingTable}) => {
+const Home = ({pricingTable}: IPricingTableTypeProps) => {
 
   return (
     <div className={styles.container}>
