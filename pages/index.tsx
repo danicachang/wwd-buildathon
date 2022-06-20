@@ -1,12 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { client } from '../lib/client';
 import styles from '../styles/Home.module.css';
-import { IPricingTableTypeProps } from '../types/PricingTypes';
 
-const Home = ({ pricingTable }: IPricingTableTypeProps) => {
-  console.log(pricingTable)
+const Home = () => {
+
   return (
     <div className={styles.container}>
       <Head>
@@ -27,17 +25,10 @@ const Home = ({ pricingTable }: IPricingTableTypeProps) => {
         <Link href="/speakers">
           <a>Speakers</a>
         </Link>
-        <h1>Pricing</h1>
-        {pricingTable.map((category) => (
-          <div key={category.id}>
-            <ul>
-              <li>{category.title}</li>
-              <li>${category.pricing}</li>
-              <li>{category.dateFrom}</li>
-              <li>{category.dateTill}</li>
-            </ul>
-          </div>
-        ))}
+        <Link href="/pricing">
+          <a>Pricing</a>
+        </Link>
+        
       </main>
 
       <footer className={styles.footer}>
@@ -55,19 +46,5 @@ const Home = ({ pricingTable }: IPricingTableTypeProps) => {
     </div>
   )
 }
-
-export const getServerSideProps = async () => {
-  const query = `*[_type == "ticket"] | order(dateFrom) { 
-    "id": _id,
-    title,
-    pricing,
-    dateFrom,
-    dateTill
-    }`;
-  const pricingTable = await client.fetch(query);
-  return {
-    props: { pricingTable },
-  };
-};
 
 export default Home;
