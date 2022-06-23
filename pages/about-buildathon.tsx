@@ -1,8 +1,8 @@
 import { IAboutBuildathonProps } from '../types/AboutBuildathonTypes';
 import { client } from '../lib/client';
-import { PortableText } from '@portabletext/react'
+import { PortableText, PortableTextReactComponents } from '@portabletext/react'
 
-const myPortableTextComponents = {
+const myPortableTextComponents:Partial<PortableTextReactComponents> = {
   types: {
     image: ({value}) => <img src={value.imageUrl} />,
     callToAction: ({value, isInline}) =>

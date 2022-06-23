@@ -1,11 +1,13 @@
 interface IImageType {
-  images: any
+  asset: any
 }
 
 interface IOtherNewsType {
   id: string,
   title: string,
-  gallery: IImageType[],
+  gallery: {
+    images: IImageType[]  
+  },
   highlight: string,
   description: string,
 }

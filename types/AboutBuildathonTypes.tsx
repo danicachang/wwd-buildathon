@@ -2,7 +2,7 @@ interface IAboutBuildathonType {
   id: string,
   title: string,
   highlight: string,
-  description: string,
+  description: any,
 }
 
 export interface IAboutBuildathonProps {
