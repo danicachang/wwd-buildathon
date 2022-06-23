@@ -1,0 +1,209 @@
+body.scrollLock {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.scroll-snap {
+	scroll-snap-type: y proximity;
+	@include mobile-tablet {
+		scroll-padding-top: 92px;
+	}
+}
+
+.scroll-snap-align {
+	scroll-snap-align: start;
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+.hidden {
+	display: none;
+}
+.clear {
+	clear: both;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.center {
+	text-align: center;
+}
+.textRight {
+	text-align: right;
+}
+
+.larger p, p.larger{
+	font-size: 1.5rem;
+}
+.notBold {
+	font-weight: normal;
+}
+.semibold {
+	font-weight: 600;
+}
+.bold {
+	font-weight: bold;
+}
+
+.inline {
+	display: inline !important;
+}
+
+.marginCenter {
+	margin: 0 auto;
+}
+.block {
+	display: block;
+}
+.v-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.darkBlue {
+	background-color: $darkBlue;
+	color: white;
+}
+.blue {
+	background-color: $blue;
+	color: black;
+}
+.teal {
+	background-color: $teal;
+	color: black;
+}
+.pink {
+	background-color: $pink;
+	color: black;
+}
+.orange {
+	background-color: $orange;
+}
+
+.white {
+	color: white;
+}
+.black {
+	color:black;
+}
+
+.relative {
+	position: relative;
+}
+.absolute {
+	position: absolute;
+}
+.noMargin {
+	margin: 0;
+}
+.smallMargin {
+	margin: .5rem;
+}
+.margin {
+	margin: 1rem;
+}
+.margin-top {
+	margin: 1rem 0 0;
+}
+.margin-bottom {
+	margin: 0 0 1rem;
+}
+.margin-h {
+	margin: 0 1rem;
+}
+.noPadding {
+	padding: 0;
+}
+.noTopPadding {
+	padding-top: 0;
+}
+.padding {
+	padding: 1rem;
+}
+.padding-small {
+	padding: .5rem;
+}
+
+.padding-left {
+	padding-left: 1rem;
+}
+.padding-v {
+	padding: 1rem 0;
+}
+.padding-h {
+	padding: 0 1rem;
+}
+.mobileNoPadding {
+	@include mobile {
+		padding: 0;
+	}
+}
+.fullWidth {
+	width: 100%;
+}
+.limitWidth {
+	max-width: 100%;
+}
+.invert {
+	background: $primaryColor;
+	color: white;
+}
+.whiteText {
+	color: #ddd;
+	a {
+		color: #ddd;
+		background: linear-gradient(to right, white, #555);
+		background-size: 0px 1px;
+		background-repeat: no-repeat;
+		background-position: left 100%;
+		&:hover {
+			color: white;
+			background-size: 100% 1px;
+		}
+	}
+}
+
+a.alternateHover {
+	background: none;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.alternate tr:nth-child(odd) {
+	background: #eee;
+}
+
+.circle {
+	border-radius: 50%;
+}
+
+.allcaps {
+	text-transform: uppercase;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.expanding {
+	overflow: hidden;
+	max-height: 0;
+	transition: all .75s;
+	transition: max-height 0.75s cubic-bezier(0,1,0,1), opacity .5s;
+	opacity: 0;
+	&.show {
+		max-height: 10000px;
+		opacity: 1;
+		transition: max-height 0.75s cubic-bezier(1,0,1,0), opacity 1s;
+	}
+}

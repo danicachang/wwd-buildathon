@@ -1,0 +1,44 @@
+.thumbnail {
+	padding: .25rem;
+	max-width: 540px;
+    padding: 1rem;
+	a {
+		width: 100%;
+		position: relative;
+		height: 0;
+		padding-bottom: calc(48% + 5rem);
+		overflow: hidden;
+		display: block;
+	}
+	.backgroundImage {
+	    background: url('/images/event.png') no-repeat center center;
+	    background-size: cover;
+	    width: 100%;
+	    position: absolute;
+	    top: 0;
+	    bottom: 5rem;
+	}
+	.title {
+		height: 5rem;
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+        padding: .5rem 1rem;
+        color: black;
+		background: $primaryColor;
+        background-color: rgba(255, 255, 255, 0.6);
+        h3, p {
+            margin: .25rem 0;
+        }
+		@include mobile-tablet {
+			.smaller {
+				font-size: .65rem;
+			}
+		}
+	}
+    button {
+        width: auto;
+        margin: .5rem 0;
+		font-size: 1rem;
+    }
+}
