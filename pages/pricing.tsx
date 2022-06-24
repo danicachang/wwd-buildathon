@@ -1,5 +1,5 @@
-import { IPricingTableTypeProps } from '../types/PricingTypes';
-import { client } from '../lib/client';
+import { IPricingTableTypeProps } from '@/types';
+import { client } from '@/lib/client';
 
 const Pricing = ({ pricingTable }: IPricingTableTypeProps) => {
   console.log(pricingTable)

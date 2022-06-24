@@ -1,9 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
-import { IPricingTableTypeProps } from '../types/PricingTypes';
 
-const Home = ({pricingTable}: IPricingTableTypeProps) => {
+const Home = () => {
 
   return (
     <div className={styles.container}>
@@ -46,7 +45,9 @@ const Home = ({pricingTable}: IPricingTableTypeProps) => {
         <Link href="/buildathon-partnerships">
           <a>Buildathon Partnerships</a>
         </Link>
-
+        <Link href="/faq">
+          <a>FAQs</a>
+        </Link>
         
       </main>
     </div>

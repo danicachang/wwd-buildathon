@@ -1,4 +1,4 @@
-import { IPastEventsProps } from '../types/PastEventsTypes';
+import { IPastEventsProps } from '../types';
 import { client, urlFor } from '../lib/client';
 import Image from 'next/image';
 
