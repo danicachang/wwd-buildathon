@@ -1,11 +1,11 @@
-import React from 'react'
+import Head from 'next/head';
+import { client } from '../lib/client';
 
 import Accordion from '../components/Accordion'
+import HeroSection from '../components/HeroSection'
+import AboutSection from '../components/AboutSection'
 
-import logo from '../images/WWD-logo.png'
-import NFTPreview from '../images/CoverImage.png'
 import pin from '../images/Pin.png'
-import outdoors from '../images/Outdoors.png'
 import octopusWoman from '../images/WomanWithOctopus.png'
 import submarine from '../images/Submarine.png'
 import jellyfish from '../images/Jellyfish.png'
@@ -23,40 +23,20 @@ import NFT4 from '../images/CoverImage.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
+import { IAboutBuildathonProps } from '../types/AboutBuildathonTypes';
+
 
 const Home = () => {
     return (
         <div>
-            <section className='darkBlue'>
-                <div className='hero content flex flex-space-between flex-mobile-col responsive-2-columns'>
-                    <div>
-                        <img src={logo.src} alt='Wander Women DAO Logo' className='tablet-desktop margin-bottom' width="75" />
-                        <h2>Live where you want.</h2>
-                        <h2>Work on what you want.</h2>
-                        <h2>Achieve financial stability.</h2>
-                        <a href='https://discord.gg/Xv7q9atKZw' target="_blank" rel="noreferrer"><button className='pink margin-top fullWidth-mobile'>Join Discord</button></a>
-                    </div>
-                    <div className='flex-mobile-order-first padding-h marginCenter' style={{maxWidth: '480px'}}><img src={NFTPreview.src} className="limitWidth" alt='Wander Women DAO NFT'/></div>
-                </div>
-            </section>
+            <Head>
+                <title>Wander Women DAO Buildathon</title>
+                <meta name="description" content="Wander Women DAO Buildathon" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
 
-            <section className='blue'>
-                <div className='content'>
-                    <h1 className='allcaps center'>Calling all Female Nomads, Expats, Remote Workers, and Wanderers</h1>
-                    <div className='flex flex-mobile-col'>
-                        <div className='mintingImage'>
-                            <img src={outdoors.src} alt='Outdoors Background' className='fullWidth' />
-                        </div>
-                        <div className='padding-h larger'>
-                            <p>Wander Women is a venture studio DAO (decentralized autonomous organization) that builds products and services to help anyone who identifies as a woman or non-binary around the world achieve financial, location, and creative independence. </p>
-
-                            <p>Our vision is to help more women lead an unconventional life on their own terms. This means being able to live wherever we want, work on what we enjoy, and have the financial stability to thrive. </p>
-
-                            <a href='https://tinyurl.com/wanderwomen' target="_blank" rel="noreferrer"><button className='limitWidth fullWidth-mobile'>Read Whitepaper</button></a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <HeroSection />
+            <AboutSection />
             
             <section className='teal'>
                 <div className='content narrow'>
@@ -335,5 +315,19 @@ const Home = () => {
         </div>
     )
 }
+
+export const getStaticProps = async () => {
+    const query = `*[_type == "aboutBuildathon" && ("about" in tags)] { 
+        "id": _id,
+        title,
+        highlight,
+        description,
+        tags
+        }`;
+    const text = await client.fetch(query);
+    return {
+      props: { text },
+    };
+  };
 
 export default Home;
