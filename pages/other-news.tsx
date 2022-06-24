@@ -1,5 +1,5 @@
-import { IOtherNewsProps } from '../types/OtherNewsTypes';
-import { client, urlFor } from '../lib/client';
+import { IOtherNewsProps } from '@/types';
+import { client, urlFor } from '@/lib/client';
 import Image from 'next/image';
 
 const OtherNews = ({ events }: IOtherNewsProps) => {

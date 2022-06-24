@@ -1,6 +1,6 @@
-import ScheduleList from '../components/ScheduleList';
-import { client } from '../lib/client';
-import { IScheduleListProps } from '../types/ScheduleTypes';
+import ScheduleList from '@/components/ScheduleList';
+import { client } from '@/lib/client';
+import { IScheduleListProps } from '@/types';
 
 export const Schedule = ({ schedule }: IScheduleListProps) => {
   return (

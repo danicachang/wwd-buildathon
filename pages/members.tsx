@@ -1,5 +1,5 @@
-import { ICoreMemberProps } from '../types/CoreMemberTypes';
-import { client } from '../lib/client';
+import { ICoreMemberProps } from '@/types';
+import { client } from '@/lib/client';
 
 const Members = ({ coreMembers }: ICoreMemberProps) => {
   console.log(coreMembers)

@@ -1,5 +1,5 @@
-import { IAboutBuildathonProps } from '../types/AboutBuildathonTypes';
-import { client } from '../lib/client';
+import { IAboutBuildathonProps } from '@/types';
+import { client } from '@/lib/client';
 import { PortableText, PortableTextReactComponents } from '@portabletext/react'
 
 const myPortableTextComponents:Partial<PortableTextReactComponents> = {

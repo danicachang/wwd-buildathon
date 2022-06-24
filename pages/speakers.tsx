@@ -1,6 +1,6 @@
-import SpeakersList from '../components/SpeakersList';
-import { client } from '../lib/client';
-import { ISpeakersListProps } from '../types/SpeakerTypes';
+import SpeakersList from '@/components/SpeakersList';
+import { client } from '@/lib/client';
+import { ISpeakersListProps } from '@/types';
 
 const Speakers = ({ speakers }: ISpeakersListProps) => {
   return (
