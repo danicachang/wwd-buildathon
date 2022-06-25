@@ -1,7 +1,7 @@
 import logo from '../images/WWD-logo.png';
 import NFTPreview from '../images/CoverImage.png';
 
-const HeroSection = () => {
+const HeroSection = ({data}) => {
   return (
     <section className="darkBlue">
       <div className="hero content flex flex-space-between flex-mobile-col responsive-2-columns">
@@ -13,8 +13,7 @@ const HeroSection = () => {
             width="75"
           />
           <h2>
-            We aim to bring 100 participants to build travel products and
-            services for our community.
+            {data.aboutBuildathon[0].highlight}
           </h2>
           <a href="" target="_blank" rel="noreferrer">
             <button className="pink margin-top fullWidth-mobile">
