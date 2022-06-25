@@ -1,34 +1,36 @@
 import { IAboutBuildathonProps } from '@/types';
 import { client } from '@/lib/client';
-import { PortableText, PortableTextReactComponents } from '@portabletext/react'
+import { PortableText, PortableTextReactComponents } from '@portabletext/react';
 
-const myPortableTextComponents:Partial<PortableTextReactComponents> = {
+const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   types: {
-    image: ({value}) => <img src={value.imageUrl} />,
-    callToAction: ({value, isInline}) =>
+    image: ({ value }) => <img src={value.imageUrl} />,
+    callToAction: ({ value, isInline }) =>
       isInline ? (
         <a href={value.url}>{value.text}</a>
       ) : (
         <div className="callToAction">{value.text}</div>
-      ),
+      )
   },
 
   marks: {
-    link: ({children, value}) => {
-      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
+    link: ({ children, value }) => {
+      const rel = !value.href.startsWith('/')
+        ? 'noreferrer noopener'
+        : undefined;
       return (
         <a href={value.href} rel={rel}>
           {children}
         </a>
-      )
-    },
-  },
-}
+      );
+    }
+  }
+};
 
 const BuildathonPartnerships = ({ text }: IAboutBuildathonProps) => {
-  console.log(text)
+  console.log(text);
   return (
-  <>
+    <>
       {text.map((object) => {
         return (
           <div key={object.id}>
@@ -40,12 +42,12 @@ const BuildathonPartnerships = ({ text }: IAboutBuildathonProps) => {
               components={myPortableTextComponents}
             />
           </div>
-        )
+        );
       })}
-          </>
-        )
-}
-            
+    </>
+  );
+};
+
 export const getStaticProps = async () => {
   const query = `*[_type == "aboutBuildathon" && ("partnerships" in tags)] { 
     "id": _id,
@@ -56,9 +58,8 @@ export const getStaticProps = async () => {
     }`;
   const text = await client.fetch(query);
   return {
-    props: { text },
+    props: { text }
   };
 };
 
 export default BuildathonPartnerships;
-            

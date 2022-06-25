@@ -1,17 +1,17 @@
 interface IImageType {
-  asset: any
+  asset: any;
 }
 
 interface IOtherNewsType {
-  id: string,
-  title: string,
+  id: string;
+  title: string;
   gallery: {
-    images: IImageType[]  
-  },
-  highlight: string,
-  description: string,
+    images: IImageType[];
+  };
+  highlight: string;
+  description: string;
 }
 
 export interface IOtherNewsProps {
-  events: IOtherNewsType[]
+  events: IOtherNewsType[];
 }

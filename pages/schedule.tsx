@@ -9,7 +9,7 @@ export const Schedule = ({ schedule }: IScheduleListProps) => {
       <ScheduleList schedule={schedule} />
     </>
   );
-}
+};
 
 export const getStaticProps = async () => {
   const query = `*[_type == "schedule"] | order(dateTime) { 
@@ -20,7 +20,7 @@ export const getStaticProps = async () => {
     }`;
   const schedule = await client.fetch(query);
   return {
-    props: { schedule },
+    props: { schedule }
   };
 };
 export default Schedule;

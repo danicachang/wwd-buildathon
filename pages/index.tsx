@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
+import { client, query } from '@/lib/index';
 
-const Home = () => {
+const Home = ({ fullData }) => {
+  console.log(fullData);
 
   return (
     <div className={styles.container}>
@@ -13,7 +15,6 @@ const Home = () => {
       </Head>
 
       <main className={styles.main}>
-
         <h2>Click links below</h2>
         <Link href="/schedule">
           <a>Schedule</a>
@@ -48,10 +49,17 @@ const Home = () => {
         <Link href="/faq">
           <a>FAQs</a>
         </Link>
-        
       </main>
     </div>
-  )
-}
+  );
+};
 
 export default Home;
+
+export const getStaticProps = async () => {
+  const fullData = await client.fetch(query);
+
+  return {
+    props: { fullData }
+  };
+};

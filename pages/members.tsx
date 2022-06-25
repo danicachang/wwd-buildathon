@@ -2,10 +2,10 @@ import { ICoreMemberProps } from '@/types';
 import { client } from '@/lib/client';
 
 const Members = ({ coreMembers }: ICoreMemberProps) => {
-  console.log(coreMembers)
+  console.log(coreMembers);
   return (
-  <>
-    {coreMembers.map((member) => (
+    <>
+      {coreMembers.map((member) => (
         <div key={member.id}>
           <ul>
             <li>{member.name}</li>
@@ -15,12 +15,11 @@ const Members = ({ coreMembers }: ICoreMemberProps) => {
             <li>{member.instagram}</li>
           </ul>
         </div>
-      ))
-      }
-  </>
-  )
-}
-            
+      ))}
+    </>
+  );
+};
+
 export const getStaticProps = async () => {
   const query = `*[_type == "coreMember"] { 
     "id": _id,
@@ -31,12 +30,11 @@ export const getStaticProps = async () => {
     "twitter": socials.twitter,
     "instagram": socials.instagram,
     }`;
-  
+
   const coreMembers = await client.fetch(query);
   return {
-    props: { coreMembers },
+    props: { coreMembers }
   };
 };
 
 export default Members;
-            

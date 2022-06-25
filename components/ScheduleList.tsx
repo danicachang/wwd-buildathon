@@ -14,10 +14,10 @@ const ScheduleList = ({ schedule }: IScheduleListProps) => {
               <li>{details.speakerName}</li>
             </ul>
           </div>
-        )
+        );
       })}
     </>
   );
-}
+};
 
 export default ScheduleList;

@@ -2,10 +2,10 @@ import { IPricingTableTypeProps } from '@/types';
 import { client } from '@/lib/client';
 
 const Pricing = ({ pricingTable }: IPricingTableTypeProps) => {
-  console.log(pricingTable)
+  console.log(pricingTable);
   return (
-  <>
-    {pricingTable.map((category) => (
+    <>
+      {pricingTable.map((category) => (
         <div key={category.id}>
           <ul>
             <li>{category.title}</li>
@@ -14,12 +14,11 @@ const Pricing = ({ pricingTable }: IPricingTableTypeProps) => {
             <li>{category.dateTill}</li>
           </ul>
         </div>
-      ))
-      }
-  </>
-  )
-}
-            
+      ))}
+    </>
+  );
+};
+
 export const getStaticProps = async () => {
   const query = `*[_type == "ticket"] | order(dateFrom) { 
     "id": _id,
@@ -30,9 +29,8 @@ export const getStaticProps = async () => {
     }`;
   const pricingTable = await client.fetch(query);
   return {
-    props: { pricingTable },
+    props: { pricingTable }
   };
 };
 
 export default Pricing;
-            

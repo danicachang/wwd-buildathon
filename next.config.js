@@ -3,8 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['cdn.sanity.io'],
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/avif', 'image/webp']
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

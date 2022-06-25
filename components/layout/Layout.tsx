@@ -1,21 +1,19 @@
-import React from 'react'
-import MenuBar from './MenuBar'
-import Footer from './Footer'
+import React from 'react';
+import MenuBar from './MenuBar';
+import Footer from './Footer';
 
 //import './Layout.css'
 
 const Layout = (props) => {
-    return(
-        <React.Fragment>
-            <MenuBar />
+  return (
+    <React.Fragment>
+      <MenuBar />
 
-            <main className="main-content">
-                {props.children}
-            </main>
+      <main className="main-content">{props.children}</main>
 
-            <Footer/>
-        </React.Fragment>
-    );
-}
+      <Footer />
+    </React.Fragment>
+  );
+};
 
 export default Layout;

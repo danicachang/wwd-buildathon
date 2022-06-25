@@ -9,7 +9,7 @@ const Speakers = ({ speakers }: ISpeakersListProps) => {
       <SpeakersList speakers={speakers} />
     </>
   );
-}
+};
 
 export const getStaticProps = async () => {
   const query = `*[_type == "speaker"] { 
@@ -24,7 +24,7 @@ export const getStaticProps = async () => {
     }`;
   const speakers = await client.fetch(query);
   return {
-    props: { speakers },
+    props: { speakers }
   };
 };
 
