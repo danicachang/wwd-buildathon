@@ -24,7 +24,7 @@ const TeamSection = ({data}) => {
                   target="_blank"
                   rel="noreferrer"
                   className="padding-small alternateHover"
-                  aria-label="Ivy's Twitter"
+                  aria-label={member.name + "'s Twitter"}
                 >
                   <FontAwesomeIcon icon={faTwitter} />
                 </a>
@@ -35,7 +35,7 @@ const TeamSection = ({data}) => {
                   target="_blank"
                   rel="noreferrer"
                   className="padding-small alternateHover"
-                  aria-label="Ivy's Instagram"
+                  aria-label={member.name + "'s Instagram"}
                 >
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>

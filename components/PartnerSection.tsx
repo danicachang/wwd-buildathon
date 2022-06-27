@@ -2,12 +2,12 @@ import outdoors from '../images/Outdoors.png';
 import { PortableText } from '@portabletext/react';
 
 
-const AboutSection = ({data}) => {
+const PartnerSection = ({data}) => {
   return (
-    <section className="blue">
+    <section className="teal">
       <div className="content">
         <h1 className="allcaps center">
-          {data.aboutBuildathon[0].title}
+          {data.partnerships[0].title}
         </h1>
         <div className="flex flex-mobile-col">
           <div className="mintingImage">
@@ -18,7 +18,7 @@ const AboutSection = ({data}) => {
             />
           </div>
           <div className="padding-h larger">
-            <PortableText value={data.aboutBuildathon[0].description} />
+            <PortableText value={data.partnerships[0].description} />
           </div>
         </div>
       </div>
@@ -26,4 +26,4 @@ const AboutSection = ({data}) => {
   );
 };
 
-export default AboutSection;
+export default PartnerSection;

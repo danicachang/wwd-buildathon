@@ -6,7 +6,7 @@ import { PortableText } from '@portabletext/react';
 
 const GoalsSection = ({data}) => {
   return (
-      <section className="teal">
+      <section className="blue">
         <div className="content narrow">
           <h1 className="allcaps center">{data.buildathonGoals[0].title}</h1>
           <br />
