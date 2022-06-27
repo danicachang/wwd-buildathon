@@ -1,65 +1,46 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import styles from '../styles/Home.module.css';
 import { client, query } from '@/lib/index';
 
-const Home = ({ fullData }) => {
-  console.log(fullData);
+import HeroSection from '../components/HeroSection';
+import AboutSection from '../components/AboutSection';
+import AboutUsSection from '../components/AboutUsSection';
+import GoalsSection from '../components/GoalsSection';
+import TeamSection from '../components/TeamSection';
+import SpeakersSection from '../components/SpeakersSection';
+import PartnerSection from '../components/PartnerSection';
+import PastEventsSection from '../components/PastEventsSection';
+import FAQSection from '../components/FAQSection';
 
+const Home = ({fullData}) => {
+  console.log(fullData);
+  
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Wander Women DAO Buildathon</title>
-        <meta name="description" content="Buildathon Aug" />
+        <meta name="description" content="Wander Women DAO Buildathon" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h2>Click links below</h2>
-        <Link href="/schedule">
-          <a>Schedule</a>
-        </Link>
-        <Link href="/speakers">
-          <a>Speakers</a>
-        </Link>
-        <Link href="/members">
-          <a>Members</a>
-        </Link>
-        <Link href="/past-events">
-          <a>Past Events</a>
-        </Link>
-        <Link href="/about">
-          <a>About WWD</a>
-        </Link>
-        <Link href="/other-news">
-          <a>Other News</a>
-        </Link>
-        <Link href="/pricing">
-          <a>Pricing</a>
-        </Link>
-        <Link href="/about-buildathon">
-          <a>About Buildathon</a>
-        </Link>
-        <Link href="/buildathon-goals">
-          <a>About Buildathon</a>
-        </Link>
-        <Link href="/buildathon-partnerships">
-          <a>Buildathon Partnerships</a>
-        </Link>
-        <Link href="/faq">
-          <a>FAQs</a>
-        </Link>
-      </main>
+      <HeroSection data={fullData} />
+      <AboutSection data={fullData} />
+      <AboutUsSection data={fullData} />
+      <GoalsSection data={fullData} />
+      <SpeakersSection data={fullData} />
+      <PartnerSection data={fullData} />
+      <PastEventsSection data={fullData} />
+      <TeamSection data={fullData} />
+      <FAQSection data={fullData} />
     </div>
   );
 };
 
-export default Home;
-
 export const getStaticProps = async () => {
-  const fullData = await client.fetch(query);
-
-  return {
-    props: { fullData }
+    const fullData = await client.fetch(query);
+  
+    return {
+      props: { fullData }
+    };
   };
-};
+
+export default Home;

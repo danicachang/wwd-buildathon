@@ -17,8 +17,8 @@ const MenuBar = () => {
 
         <h3 className="notBold">
           <a className="title" href="/">
-            Wander Women DAO <span className="tablet-desktop">•</span>
-            <br className="mobile" /> Venture Studio
+            Wander Women <span className="tablet-desktop">•</span>
+            <br className="mobile" /> Buildathon
           </a>
         </h3>
 
