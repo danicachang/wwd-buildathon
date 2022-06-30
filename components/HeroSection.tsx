@@ -1,7 +1,9 @@
-import logo from '../images/WWD-logo.png';
-import NFTPreview from '../images/CoverImage.png';
+import Link from 'next/link';
 
-const HeroSection = ({data}) => {
+import NFTPreview from '../images/CoverImage.png';
+import logo from '../images/WWD-logo.png';
+
+const HeroSection = ({ data }) => {
   return (
     <section className="darkBlue">
       <div className="hero content flex flex-space-between flex-mobile-col responsive-2-columns">
@@ -12,14 +14,17 @@ const HeroSection = ({data}) => {
             className="tablet-desktop margin-bottom"
             width="75"
           />
-          <h2>
-            {data.aboutBuildathon[0].highlight}
-          </h2>
-          <a href="" target="_blank" rel="noreferrer">
+          <h2>{data.aboutBuildathon[0].highlight}</h2>
+          <h4>
+            {data.buildathonPeriod[0].startDate} -{' '}
+            {data.buildathonPeriod[0].endDate}
+          </h4>
+
+          <Link href="https://lu.ma/wwdbuildathon" passHref={true}>
             <button className="pink margin-top fullWidth-mobile">
               Sign Up
             </button>
-          </a>
+          </Link>
         </div>
         <div
           className="flex-mobile-order-first padding-h marginCenter"

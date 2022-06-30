@@ -1,19 +1,19 @@
 import Head from 'next/head';
-import { client, query } from '@/lib/index';
 
-import HeroSection from '../components/HeroSection';
+import { client, query } from '@/lib/index';
 import AboutSection from '../components/AboutSection';
 import AboutUsSection from '../components/AboutUsSection';
+import FAQSection from '../components/FAQSection';
 import GoalsSection from '../components/GoalsSection';
-import TeamSection from '../components/TeamSection';
-import SpeakersSection from '../components/SpeakersSection';
+import HeroSection from '../components/HeroSection';
 import PartnerSection from '../components/PartnerSection';
 import PastEventsSection from '../components/PastEventsSection';
-import FAQSection from '../components/FAQSection';
+import SpeakersSection from '../components/SpeakersSection';
+import TeamSection from '../components/TeamSection';
 
-const Home = ({fullData}) => {
+const Home = ({ fullData }) => {
   console.log(fullData);
-  
+
   return (
     <div>
       <Head>
@@ -24,11 +24,10 @@ const Home = ({fullData}) => {
 
       <HeroSection data={fullData} />
       <AboutSection data={fullData} />
-      <AboutUsSection data={fullData} />
       <GoalsSection data={fullData} />
       <SpeakersSection data={fullData} />
       <PartnerSection data={fullData} />
-      <PastEventsSection data={fullData} />
+      <AboutUsSection data={fullData} />
       <TeamSection data={fullData} />
       <FAQSection data={fullData} />
     </div>
@@ -36,11 +35,11 @@ const Home = ({fullData}) => {
 };
 
 export const getStaticProps = async () => {
-    const fullData = await client.fetch(query);
-  
-    return {
-      props: { fullData }
-    };
+  const fullData = await client.fetch(query);
+
+  return {
+    props: { fullData }
   };
+};
 
 export default Home;
