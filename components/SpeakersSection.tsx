@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { urlFor } from '../lib/client';
 
 const SpeakersSection = ({ data }) => {
-  const category = [...new Set(data.speakers.map((item) => item.category))];
-  console.log(category);
+  //const category = [...new Set(data.speakers.map((item) => item.category))];
+  //console.log(category);
 
   return (
     <section className="pink">
