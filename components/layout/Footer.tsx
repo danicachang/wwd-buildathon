@@ -12,8 +12,6 @@ const MenuBar = () => {
   return (
     <footer className="padding-h">
       <div className="content">
-        <div className="ml-embedded" data-form="4nLAMa"></div>
-        <br />
 
         <h3 className="notBold">
           <a className="title" href="/">
@@ -24,7 +22,7 @@ const MenuBar = () => {
 
         <div className="social-links">
           <a
-            href="https://discord.gg/hhUmNwbdXM"
+            href="https://discord.gg/FNAGvdYprG"
             target="_blank"
             rel="noreferrer"
             aria-label="Discord"
