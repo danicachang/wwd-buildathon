@@ -29,7 +29,7 @@ const MenuBar = () => {
 
         <div className="social-links tablet-desktop">
           <a
-            href="https://discord.gg/hhUmNwbdXM"
+            href="https://discord.gg/FNAGvdYprG"
             target="_blank"
             rel="noreferrer"
             aria-label="Discord"

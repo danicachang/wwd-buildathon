@@ -7,7 +7,6 @@ import FAQSection from '../components/FAQSection';
 import GoalsSection from '../components/GoalsSection';
 import HeroSection from '../components/HeroSection';
 import PartnerSection from '../components/PartnerSection';
-import PastEventsSection from '../components/PastEventsSection';
 import SpeakersSection from '../components/SpeakersSection';
 import TeamSection from '../components/TeamSection';
 
@@ -38,7 +37,8 @@ export const getStaticProps = async () => {
   const fullData = await client.fetch(query);
 
   return {
-    props: { fullData }
+    props: { fullData },
+    revalidate: 10
   };
 };
 
