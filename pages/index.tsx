@@ -39,7 +39,8 @@ export const getStaticProps = async () => {
     const fullData = await client.fetch(query);
   
     return {
-      props: { fullData }
+      props: { fullData },
+      revalidate: 10
     };
   };
 
