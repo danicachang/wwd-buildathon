@@ -22,7 +22,6 @@ const GoalsSection = ({ data }) => {
           </div>
           <div className="roadmap-text">
             <PortableText value={data.buildathonGoals[0].description[0]} />
-            <PortableText value={data.buildathonGoals[0].description[1]} />
           </div>
         </div>
         <div className="flex padding-v relative flex-mobile-col">
@@ -37,7 +36,6 @@ const GoalsSection = ({ data }) => {
           </div>
           <div className="roadmap-text">
             <PortableText value={data.buildathonGoals[0].description[2]} />
-            <PortableText value={data.buildathonGoals[0].description[3]} />
           </div>
         </div>
         <div className="flex padding-v relative flex-mobile-col">
@@ -47,7 +45,6 @@ const GoalsSection = ({ data }) => {
           </div>
           <div className="roadmap-text">
             <PortableText value={data.buildathonGoals[0].description[4]} />
-            <PortableText value={data.buildathonGoals[0].description[5]} />
           </div>
         </div>
       </div>
