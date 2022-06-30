@@ -8,7 +8,6 @@ import GoalsSection from '../components/GoalsSection';
 import TeamSection from '../components/TeamSection';
 import SpeakersSection from '../components/SpeakersSection';
 import PartnerSection from '../components/PartnerSection';
-import PastEventsSection from '../components/PastEventsSection';
 import FAQSection from '../components/FAQSection';
 
 const Home = ({fullData}) => {
@@ -28,7 +27,6 @@ const Home = ({fullData}) => {
       <GoalsSection data={fullData} />
       <SpeakersSection data={fullData} />
       <PartnerSection data={fullData} />
-      <PastEventsSection data={fullData} />
       <TeamSection data={fullData} />
       <FAQSection data={fullData} />
     </div>
