@@ -1,28 +1,61 @@
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
+
+import { urlFor } from '../lib/client';
 import { ISpeakersListProps } from '../types/SpeakerTypes';
 
-import Image from 'next/image';
-import { urlFor } from '../lib/client';
-const SpeakersList = ({ speakers }: ISpeakersListProps) => {
-  console.log(speakers);
+const SpeakersList = ({ category, speakers }) => {
   return (
     <>
-      <h1>Speaker Component</h1>
       {speakers.map((speaker) => {
         return (
-          <div key={speaker.id}>
-            <ul>
-              <Image
+          <div className="padding" key={speaker.id}>
+            {speaker.image && (
+              <img
                 src={urlFor(speaker.image).url()}
-                width="320"
-                height="320"
+                alt="{member.name}"
+                className="circle"
+                width="200px"
               />
-              <li>{speaker.name}</li>
-              <li>{speaker.role}</li>
-              <li>{speaker.description}</li>
-              <li>{speaker.email}</li>
-              <li>{speaker.linkedin}</li>
-              <li>{speaker.website}</li>
-            </ul>
+            )}
+            <h3 className="margin-top">{speaker.name}</h3>
+            <h6 className="allcaps noMargin">{speaker.role}</h6>
+            {speaker.description && <p>{speaker.description}</p>}
+            {speaker.email && (
+              <a
+                href={'mailto:' + speaker.email}
+                target="_blank"
+                rel="noreferrer"
+                className="padding-small alternateHover"
+                aria-label={speaker.name + "'s Email"}
+              >
+                <FontAwesomeIcon icon={faEnvelope} />
+              </a>
+            )}
+            {speaker.linkedin && (
+              <a
+                href={speaker.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="padding-small alternateHover"
+                aria-label={speaker.name + "'s LinkedIn"}
+              >
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+            )}
+            {speaker.website && (
+              <a
+                href={speaker.website}
+                target="_blank"
+                rel="noreferrer"
+                className="padding-small alternateHover"
+                aria-label={speaker.name + "'s Website"}
+              >
+                <FontAwesomeIcon icon={faGlobe} />
+              </a>
+            )}
           </div>
         );
       })}
