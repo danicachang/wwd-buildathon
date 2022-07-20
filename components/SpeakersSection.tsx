@@ -6,7 +6,7 @@ const SpeakersSection = ({ data }) => {
       <div className="content meet-team">
         <h1 className="allcaps center">Speakers</h1>
         {data.speakerCategory.map((category) => (
-          <>
+          <div key={category.id}>
             <div key={category.id}>{category.name}</div>
             <div className="flex responsive-3-columns flex-wrap">
               <SpeakersList
@@ -16,7 +16,7 @@ const SpeakersSection = ({ data }) => {
                 )}
               />
             </div>
-          </>
+          </div>
         ))}
       </div>
     </section>
