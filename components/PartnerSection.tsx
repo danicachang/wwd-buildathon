@@ -25,29 +25,38 @@ const PartnerSection = ({ data }) => {
             </Link>
           </div>
         </div>
-        <div>
+        <div className="padding">
           <h2 className="allcaps center margin-top padding">Our Partners</h2>
-          <div className="flex responsive-3-columns flex-v-center flex-wrap">
-            {data.partnerships.map((partner) => (
-              <div
-                key={partner.id}
-                className="flex flex-col flex-v-center padding"
-                style={{ height: '100%' }}
-              >
-                {partner.image && (
+          <div className="flex responsive-3-columns flex-v-center flex-center flex-wrap">
+            {data.partnerships
+              .filter((partner) => partner.paid)
+              .map((partner) => (
+                <div
+                  key={partner.id}
+                  className="flex flex-col flex-v-center padding"
+                  style={{ height: '100%' }}
+                >
                   <img
-                    src={urlFor(partner.image).url()}
+                    src={urlFor(partner.image).width(300).url()}
                     alt={partner.name}
-                    style={{
-                      objectFit: 'scale-down',
-                      width: '80%',
-                      height: '120px'
-                    }}
                   />
-                )}
-                {/* <h4 className="margin-top">{partner.name}</h4> */}
-              </div>
-            ))}
+                </div>
+              ))}
+          </div>
+          <div className="padding flex responsive-3-columns flex-v-center flex-wrap">
+            {data.partnerships
+              .filter((partner) => !partner.paid)
+              .map((partner) => (
+                <div
+                  key={partner.id}
+                  className="flex flex-col flex-v-center padding"
+                >
+                  <img
+                    src={urlFor(partner.image).width(150).url()}
+                    alt={partner.name}
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </div>

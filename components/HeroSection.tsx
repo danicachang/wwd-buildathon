@@ -21,7 +21,7 @@ const HeroSection = ({ data }) => {
           </h4>
 
           <Link
-            href="https://www.eventbrite.sg/e/wander-women-business-buildathon-tickets-384669997317"
+            href="https://www.eventbrite.sg/e/wander-women-business-buildathon-tickets-384669997317 "
             passHref={true}
           >
             <button className="pink margin-top fullWidth-mobile">
