@@ -1,14 +1,15 @@
 import Head from 'next/head';
 
+import AboutSection from '@/components/AboutSection';
+import AboutUsSection from '@/components/AboutUsSection';
+import FAQSection from '@/components/FAQSection';
+import GoalsSection from '@/components/GoalsSection';
+import HeroSection from '@/components/HeroSection';
+import PartnerSection from '@/components/PartnerSection';
+import ScheduleSection from '@/components/ScheduleSection';
+import SpeakersSection from '@/components/SpeakersSection';
+import TeamSection from '@/components/TeamSection';
 import { client, query } from '@/lib/index';
-import AboutSection from '../components/AboutSection';
-import AboutUsSection from '../components/AboutUsSection';
-import FAQSection from '../components/FAQSection';
-import GoalsSection from '../components/GoalsSection';
-import HeroSection from '../components/HeroSection';
-import PartnerSection from '../components/PartnerSection';
-import SpeakersSection from '../components/SpeakersSection';
-import TeamSection from '../components/TeamSection';
 
 const Home = ({ fullData }) => {
   console.log(fullData);
@@ -28,6 +29,7 @@ const Home = ({ fullData }) => {
       <PartnerSection data={fullData} />
       <AboutUsSection data={fullData} />
       <TeamSection data={fullData} />
+      <ScheduleSection data={fullData} />
       <FAQSection data={fullData} />
     </div>
   );

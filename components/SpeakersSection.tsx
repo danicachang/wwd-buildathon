@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import SpeakersList from './SpeakersList';
 
 const SpeakersSection = ({ data }) => {
@@ -36,6 +38,11 @@ const SpeakersSection = ({ data }) => {
               </div>
             </div>
           ))}
+          <div className="center">
+            <Link href="/talks">
+              <a>View our talks</a>
+            </Link>
+          </div>
         </div>
       </section>
     </>
