@@ -20,7 +20,10 @@ const HeroSection = ({ data }) => {
             {data.buildathonPeriod[0].endDate}
           </h4>
 
-          <Link href="https://lu.ma/wwdbuildathon" passHref={true}>
+          <Link
+            href="https://www.eventbrite.sg/e/wander-women-business-buildathon-tickets-384669997317"
+            passHref={true}
+          >
             <button className="pink margin-top fullWidth-mobile">
               Sign Up
             </button>
