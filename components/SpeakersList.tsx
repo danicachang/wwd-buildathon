@@ -1,10 +1,9 @@
+import { PortableText } from '@portabletext/react';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
 
 import { urlFor } from '../lib/client';
-import { ISpeakersListProps } from '../types/SpeakerTypes';
 
 const SpeakersList = ({ category, speakers }) => {
   return (
@@ -23,7 +22,9 @@ const SpeakersList = ({ category, speakers }) => {
             <div>
               <h3 className="margin-top">{speaker.name}</h3>
               <h6 className="allcaps noMargin">{speaker.role}</h6>
-              {speaker.description && <p>{speaker.description}</p>}
+              {speaker.descriptions && (
+                <PortableText value={speaker.descriptions} />
+              )}
               {speaker.email && (
                 <a
                   href={'mailto:' + speaker.email}
