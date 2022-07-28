@@ -43,18 +43,24 @@ const PartnerSection = ({ data }) => {
                 </div>
               ))}
           </div>
-          <div className="padding flex responsive-3-columns flex-v-center flex-wrap">
+          {/* <div className="padding flex responsive-3-columns flex-v-center flex-wrap">
+          responsive-3-columns flex-v-center flex-center flex-wrap padding-v */}
+          <div className="flex responsive-3-columns flex-v-center flex-center flex-wrap padding-v">
             {data.partnerships
               .filter((partner) => !partner.paid)
               .map((partner) => (
-                <div
-                  key={partner.id}
-                  className="flex flex-col flex-v-center padding"
-                >
-                  <img
-                    src={urlFor(partner.image).width(150).url()}
-                    alt={partner.name}
-                  />
+                <div key={partner.id}>
+                  {partner.scale ? (
+                    <img
+                      src={urlFor(partner.image).width(400).url()}
+                      alt={partner.name}
+                    />
+                  ) : (
+                    <img
+                      src={urlFor(partner.image).width(150).url()}
+                      alt={partner.name}
+                    />
+                  )}
                 </div>
               ))}
           </div>
