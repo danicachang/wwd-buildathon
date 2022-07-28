@@ -4,10 +4,12 @@ import Link from 'next/link';
 
 import outdoors from '../images/Outdoors.png';
 import { urlFor } from '../lib/client';
+import { BlueDownWaves, DarkBlueDownWaves } from './layout/Waves';
 
 const PartnerSection = ({ data }) => {
   return (
-    <section className="blue">
+    <div className="blue">
+      <DarkBlueDownWaves />
       <div className="content">
         <h1 className="allcaps center">{data.aboutPartnerships[0].title}</h1>
         <div className="flex flex-mobile-col">
@@ -27,7 +29,7 @@ const PartnerSection = ({ data }) => {
         </div>
         <div className="padding">
           <h2 className="allcaps center margin-top padding">Our Partners</h2>
-          <div className="flex responsive-3-columns flex-v-center flex-center flex-wrap">
+          <div className="flex responsive-3-columns flex-v-center flex-center flex-wrap padding-v">
             {data.partnerships
               .filter((partner) => partner.paid)
               .map((partner) => (
@@ -37,28 +39,29 @@ const PartnerSection = ({ data }) => {
                   style={{ height: '100%' }}
                 >
                   <img
-                    src={urlFor(partner.image).width(300).url()}
+                    src={urlFor(partner.image).quality(100).url()}
                     alt={partner.name}
+                    width="300px"
                   />
                 </div>
               ))}
           </div>
-          {/* <div className="padding flex responsive-3-columns flex-v-center flex-wrap">
-          responsive-3-columns flex-v-center flex-center flex-wrap padding-v */}
           <div className="flex responsive-3-columns flex-v-center flex-center flex-wrap padding-v">
             {data.partnerships
               .filter((partner) => !partner.paid)
               .map((partner) => (
-                <div key={partner.id}>
+                <div key={partner.id} className="flex flex-center padding">
                   {partner.scale ? (
                     <img
-                      src={urlFor(partner.image).width(400).url()}
+                      src={urlFor(partner.image).quality(100).url()}
                       alt={partner.name}
+                      width="400px"
                     />
                   ) : (
                     <img
-                      src={urlFor(partner.image).width(150).url()}
+                      src={urlFor(partner.image).quality(100).url()}
                       alt={partner.name}
+                      width="150px"
                     />
                   )}
                 </div>
@@ -66,7 +69,7 @@ const PartnerSection = ({ data }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

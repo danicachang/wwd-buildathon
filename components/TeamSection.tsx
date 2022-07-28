@@ -2,10 +2,12 @@ import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { urlFor } from '../lib/client';
+import { TealDownWaves } from './layout/Waves';
 
 const TeamSection = ({ data }) => {
   return (
-    <section className="pink">
+    <div className="pink">
+      <TealDownWaves />
       <div className="content meet-team">
         <h1 className="allcaps center">Meet the Team</h1>
         <div className="flex responsive-3-columns flex-wrap">
@@ -13,9 +15,11 @@ const TeamSection = ({ data }) => {
             <div className="padding" key={member.id}>
               {member.image && (
                 <img
-                  src={urlFor(member.image).size(200, 200).url()}
+                  src={urlFor(member.image).quality(100).url()}
                   alt="{member.name}"
-                  className="circle"
+                  className="circle border"
+                  width="200px"
+                  height="200px"
                 />
               )}
               <h3 className="margin-top">{member.name}</h3>
@@ -47,7 +51,7 @@ const TeamSection = ({ data }) => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

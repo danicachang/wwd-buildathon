@@ -13,10 +13,11 @@ const SpeakersList = ({ category, speakers }) => {
           <div className="padding" key={speaker.id}>
             {speaker.image && (
               <img
-                src={urlFor(speaker.image).size(200, 200).url()}
+                src={urlFor(speaker.image).quality(100).url()}
                 alt="{member.name}"
-                className="circle"
-                width="200px"
+                className="circle border"
+                width="300px"
+                height="300px"
               />
             )}
             <div>

@@ -17,6 +17,9 @@
 .flex {
 	display: flex;
 }
+.one-col > * {
+	width: 70%;
+}
 .two-col > * {
 	width: 50%;
 }
@@ -52,6 +55,16 @@
 		}
 	}
 }
+
+.flex-mobile-tablet-col-rev {
+	@include mobile-tablet {
+		flex-direction:column-reverse;
+		&.two-col > *, &.three-col > *, &.four-col > * {
+			width: 100% !important;
+		}
+	}
+}
+
 .flex-v-start {
 	align-items: start;
 }

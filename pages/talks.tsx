@@ -6,9 +6,11 @@ const TalksComponent = ({ speakers }) => {
       {speakers.map((speaker) => (
         <div className="padding flex flex-start flex-v-start" key={speaker.id}>
           <img
-            src={urlFor(speaker.image.asset).size(50, 50).url()}
+            src={urlFor(speaker.image.asset).quality(100).url()}
             alt="{member.name}"
-            className="padding circle"
+            className="circle border margin-h"
+            width="100px"
+            height="100px"
           />
           <div>
             <h3>{speaker.title}</h3>

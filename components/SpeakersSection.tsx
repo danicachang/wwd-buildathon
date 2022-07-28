@@ -1,10 +1,12 @@
 import Link from 'next/link';
 
+import { DarkBlueUpWaves, PinkDownWaves, TealDownWaves, TealUpWaves } from './layout/Waves';
 import SpeakersList from './SpeakersList';
 
 const SpeakersSection = ({ data }) => {
   return (
-    <>
+    <div className="pink">
+      <TealDownWaves />
       <section className="pink">
         <div className="content meet-team">
           <h1 className="allcaps center">Speakers</h1>
@@ -23,7 +25,8 @@ const SpeakersSection = ({ data }) => {
           ))}
         </div>
       </section>
-      <section className="teal">
+      <div className="teal">
+        <PinkDownWaves />
         <div className="content meet-team">
           {data.speakerCategory.map((category) => (
             <div key={category.id} className="padding">
@@ -44,8 +47,8 @@ const SpeakersSection = ({ data }) => {
             </Link>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 };
 

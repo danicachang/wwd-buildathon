@@ -1,10 +1,10 @@
 import { PortableText } from '@portabletext/react';
 import NFT from '../images/CoverImage.png';
+import { BlueDownWaves } from './layout/Waves';
 
-const AboutUsSection = ({data}) => {
-  return (
-
-    <section className="teal">
+const AboutUsSection = ({ data }) => (
+  <div className="teal">
+    <BlueDownWaves />
     <div className="content">
       <h1 className="allcaps center">{data.about[0].title}</h1>
       <div className="flex responsive-2-columns flex-wrap">
@@ -12,16 +12,11 @@ const AboutUsSection = ({data}) => {
           <PortableText value={data.about[0].description} />
         </div>
         <div className="flex-mobile-order-first padding">
-          <img
-            src={NFT.src}
-            className="fullWidth"
-            alt="Wander Women DAO NFT"
-          />
+          <img src={NFT.src} className="fullWidth" alt="Wander Women DAO NFT" />
         </div>
       </div>
     </div>
-  </section>
-  );
-};
+  </div>
+);
 
 export default AboutUsSection;

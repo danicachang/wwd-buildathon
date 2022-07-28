@@ -1,9 +1,9 @@
-
 import Accordion from '../components/Accordion';
+import { DarkBlueDownWaves } from './layout/Waves';
 
-const FAQSection = ({data}) => {
+const FAQSection = ({ data }) => {
   return (
-    <section className="blue padding">
+    <div className="blue padding">
       <div className="content">
         <h1 className="allcaps">FAQs</h1>
         <div className="black">
@@ -16,7 +16,7 @@ const FAQSection = ({data}) => {
           })}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

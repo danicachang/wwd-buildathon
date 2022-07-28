@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import NFTPreview from '../images/CoverImage.png';
 import logo from '../images/WWD-logo.png';
+import { TealUpWaves } from './layout/Waves';
 
 const HeroSection = ({ data }) => {
   return (

@@ -7,6 +7,7 @@ import GoalsSection from '@/components/GoalsSection';
 import HeroSection from '@/components/HeroSection';
 import PartnerSection from '@/components/PartnerSection';
 import ScheduleSection from '@/components/ScheduleSection';
+import SignUpSection from '@/components/SignUpSection';
 import SpeakersSection from '@/components/SpeakersSection';
 import TeamSection from '@/components/TeamSection';
 import { client, query } from '@/lib/index';
@@ -30,6 +31,7 @@ const Home = ({ fullData }) => {
       <PartnerSection data={fullData} />
       <AboutUsSection data={fullData} />
       <TeamSection data={fullData} />
+      <SignUpSection />
       <FAQSection data={fullData} />
     </div>
   );
