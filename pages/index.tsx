@@ -26,10 +26,10 @@ const Home = ({ fullData }) => {
       <AboutSection data={fullData} />
       <GoalsSection data={fullData} />
       <SpeakersSection data={fullData} />
+      <ScheduleSection data={fullData} />
       <PartnerSection data={fullData} />
       <AboutUsSection data={fullData} />
       <TeamSection data={fullData} />
-      <ScheduleSection data={fullData} />
       <FAQSection data={fullData} />
     </div>
   );
