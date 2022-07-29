@@ -26,39 +26,42 @@ const SpeakersList = ({ category, speakers }) => {
               {speaker.descriptions && (
                 <PortableText value={speaker.descriptions} />
               )}
-              {speaker.email && (
-                <a
-                  href={'mailto:' + speaker.email}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="padding-small alternateHover"
-                  aria-label={speaker.name + "'s Email"}
-                >
-                  <FontAwesomeIcon icon={faEnvelope} />
-                </a>
-              )}
-              {speaker.linkedin && (
-                <a
-                  href={speaker.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="padding-small alternateHover"
-                  aria-label={speaker.name + "'s LinkedIn"}
-                >
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </a>
-              )}
-              {speaker.website && (
-                <a
-                  href={speaker.website}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="padding-small alternateHover"
-                  aria-label={speaker.name + "'s Website"}
-                >
-                  <FontAwesomeIcon icon={faGlobe} />
-                </a>
-              )}
+              <div className="padding-v">
+                {speaker.email && (
+                  <a
+                    href={'mailto:' + speaker.email}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="padding-small alternateHover"
+                    aria-label={speaker.name + "'s Email"}
+                  >
+                    <FontAwesomeIcon icon={faEnvelope} />
+                  </a>
+                )}
+
+                {speaker.linkedin && (
+                  <a
+                    href={speaker.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="padding-small alternateHover"
+                    aria-label={speaker.name + "'s LinkedIn"}
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </a>
+                )}
+                {speaker.website && (
+                  <a
+                    href={speaker.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="padding-small alternateHover"
+                    aria-label={speaker.name + "'s Website"}
+                  >
+                    <FontAwesomeIcon icon={faGlobe} />
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         );
