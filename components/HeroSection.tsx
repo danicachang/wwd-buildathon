@@ -6,7 +6,7 @@ import { TealUpWaves } from './layout/Waves';
 
 const HeroSection = ({ data }) => {
   return (
-    <section className="darkBlue">
+    <div className="darkBlue">
       <div className="hero content flex flex-space-between flex-mobile-col responsive-2-columns">
         <div>
           <img
@@ -41,7 +41,7 @@ const HeroSection = ({ data }) => {
           />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

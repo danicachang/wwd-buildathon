@@ -7,7 +7,7 @@ const SpeakersSection = ({ data }) => {
   return (
     <div className="pink">
       <TealDownWaves />
-      <section className="pink">
+      <div className="pink">
         <div className="content meet-team">
           <h1 className="allcaps center">Speakers</h1>
           {data.specialSpeakerCategory.map((category) => (
@@ -24,8 +24,8 @@ const SpeakersSection = ({ data }) => {
             </div>
           ))}
         </div>
-      </section>
-      <section className="teal">
+      </div>
+      <div className="teal">
         <PinkDownWaves />
         <div className="content meet-team">
           {data.speakerCategory.map((category) => (
@@ -47,7 +47,7 @@ const SpeakersSection = ({ data }) => {
             </Link>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

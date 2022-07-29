@@ -6,7 +6,7 @@ import octopusWoman from '../images/WomanWithOctopus.png';
 
 const GoalsSection = ({ data }) => {
   return (
-    <section className="teal">
+    <div className="teal">
       <div className="content narrow">
         <h1 className="allcaps center">{data.buildathonGoals[0].title}</h1>
         <br />
@@ -48,7 +48,7 @@ const GoalsSection = ({ data }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

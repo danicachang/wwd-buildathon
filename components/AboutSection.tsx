@@ -6,7 +6,7 @@ import { DarkBlueDownWaves } from './layout/Waves';
 
 const AboutSection = ({ data }) => {
   return (
-    <section className="flex flex-col teal">
+    <div className="flex flex-col teal">
       <DarkBlueDownWaves />
       <div className="flex flex-v-center two-col flex-mobile-tablet-col-rev">
         <div className="flex flex-center flex-v-center two-col">
@@ -53,7 +53,7 @@ const AboutSection = ({ data }) => {
         </div>
       </div>
 
-      <section className="blue hidden">
+      <div className="blue hidden">
         <div className="content">
           <h1 className="allcaps center">{data.aboutBuildathon[0].title}</h1>
           <div className="flex flex-mobile-col">
@@ -69,8 +69,8 @@ const AboutSection = ({ data }) => {
             </div>
           </div>
         </div>
-      </section>
-    </section>
+      </div>
+    </div>
   );
 };
 

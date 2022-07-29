@@ -2,7 +2,7 @@ import { BlueUpWaves, TealDownWaves } from './layout/Waves';
 
 const ScheduleSection = ({ data }) => {
   return (
-    <section className="darkBlue">
+    <div className="darkBlue">
       <TealDownWaves />
       <div className="content meet-team">
         <h1 className="allcaps center">Schedule</h1>
@@ -14,7 +14,7 @@ const ScheduleSection = ({ data }) => {
           ></iframe>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

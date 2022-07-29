@@ -3,7 +3,7 @@ import NFT from '../images/CoverImage.png';
 import { BlueDownWaves, TealDownWaves } from './layout/Waves';
 
 const AboutUsSection = ({ data }) => (
-  <section className="teal">
+  <div className="teal">
     <BlueDownWaves />
     <div className="content">
       <h1 className="allcaps center">{data.about[0].title}</h1>
@@ -16,7 +16,7 @@ const AboutUsSection = ({ data }) => (
         </div>
       </div>
     </div>
-  </section>
+  </div>
 );
 
 export default AboutUsSection;

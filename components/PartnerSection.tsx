@@ -8,7 +8,7 @@ import { BlueDownWaves, DarkBlueDownWaves } from './layout/Waves';
 
 const PartnerSection = ({ data }) => {
   return (
-    <section className="blue">
+    <div className="blue">
       <DarkBlueDownWaves />
       <div className="content">
         <h1 className="allcaps center">{data.aboutPartnerships[0].title}</h1>
@@ -69,7 +69,7 @@ const PartnerSection = ({ data }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

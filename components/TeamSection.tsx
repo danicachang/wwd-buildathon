@@ -6,7 +6,7 @@ import { TealDownWaves } from './layout/Waves';
 
 const TeamSection = ({ data }) => {
   return (
-    <section className="pink">
+    <div className="pink">
       <TealDownWaves />
       <div className="content meet-team">
         <h1 className="allcaps center">Meet the Team</h1>
@@ -51,7 +51,7 @@ const TeamSection = ({ data }) => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
