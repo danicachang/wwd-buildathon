@@ -8,7 +8,9 @@ const GoalsSection = ({ data }) => {
   return (
     <div className="teal">
       <div className="content narrow">
-        <h1 className="allcaps center">{data.buildathonGoals[0].title}</h1>
+        <h1 className="allcaps center padding-v">
+          {data.buildathonGoals[0].title}
+        </h1>
         <br />
         <br />
         <div className="flex padding-v relative flex-mobile-col">

@@ -9,7 +9,7 @@ const TeamSection = ({ data }) => {
     <div className="pink">
       <TealDownWaves />
       <div className="content meet-team">
-        <h1 className="allcaps center">Meet the Team</h1>
+        <h1 className="allcaps center padding-v">Meet the Team</h1>
         <div className="flex responsive-3-columns flex-wrap">
           {data.members.map((member) => (
             <div className="padding" key={member.id}>

@@ -5,7 +5,7 @@ const ScheduleSection = ({ data }) => {
     <div className="darkBlue">
       <TealDownWaves />
       <div className="content">
-        <h1 className="allcaps center">Schedule</h1>
+        <h1 className="allcaps center padding-v">Schedule</h1>
         <div>
           <iframe
             src="https://airtable.com/embed/shrrFOJMsFQeN2TsZ?backgroundColor=cyan&viewControls=on"

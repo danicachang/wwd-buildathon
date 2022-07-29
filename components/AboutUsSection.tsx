@@ -6,7 +6,7 @@ const AboutUsSection = ({ data }) => (
   <div className="teal">
     <BlueDownWaves />
     <div className="content">
-      <h1 className="allcaps center">{data.about[0].title}</h1>
+      <h1 className="allcaps center padding-v">{data.about[0].title}</h1>
       <div className="flex responsive-2-columns flex-wrap">
         <div className="padding larger black">
           <PortableText value={data.about[0].description} />
