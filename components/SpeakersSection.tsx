@@ -43,7 +43,9 @@ const SpeakersSection = ({ data }) => {
           ))}
           <div className="center">
             <Link href="/talks">
-              <a>View our talks</a>
+              <button className="blue margin-top fullWidth-mobile">
+                View our talks
+              </button>
             </Link>
           </div>
         </div>

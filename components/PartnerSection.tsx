@@ -22,13 +22,23 @@ const PartnerSection = ({ data }) => {
           </div>
           <div className="padding-h larger">
             <PortableText value={data.aboutPartnerships[0].description} />
-            <Link href="https://docs.google.com/presentation/d/1q4STB0d29OUhPYjJID7-h1ArNycrlDRPH0DF7r4zfos/present?slide=id.p">
-              Read Our Sponsorship Deck
+            <Link
+              className="links"
+              href="https://docs.google.com/presentation/d/1q4STB0d29OUhPYjJID7-h1ArNycrlDRPH0DF7r4zfos/present?slide=id.p"
+            >
+              <button className="teal margin-top fullWidth-mobile">
+                Read Our Sponsorship Deck
+              </button>
             </Link>
           </div>
         </div>
         <div className="padding">
-          <h2 className="allcaps center margin-top padding">Our Partners</h2>
+          <h2
+            className="allcaps center margin-top"
+            style={{ padding: '2em 0' }}
+          >
+            Our Partners
+          </h2>
           <div className="flex responsive-3-columns flex-v-center flex-center flex-wrap padding-v">
             {data.partnerships
               .filter((partner) => partner.paid)
