@@ -4,7 +4,7 @@ const ScheduleSection = ({ data }) => {
   return (
     <div className="darkBlue">
       <TealDownWaves />
-      <div className="content meet-team">
+      <div className="content">
         <h1 className="allcaps center">Schedule</h1>
         <div>
           <iframe

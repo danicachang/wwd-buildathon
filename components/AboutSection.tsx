@@ -8,7 +8,7 @@ const AboutSection = ({ data }) => {
   return (
     <div className="teal">
       <DarkBlueDownWaves />
-      <div className="flex flex-col">
+      <div className="padding flex flex-col">
         <div className="flex flex-v-center two-col flex-mobile-tablet-col-rev">
           <div className="flex flex-center flex-v-center two-col">
             <img
