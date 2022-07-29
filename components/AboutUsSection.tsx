@@ -1,9 +1,9 @@
 import { PortableText } from '@portabletext/react';
 import NFT from '../images/CoverImage.png';
-import { BlueDownWaves } from './layout/Waves';
+import { BlueDownWaves, TealDownWaves } from './layout/Waves';
 
 const AboutUsSection = ({ data }) => (
-  <div className="teal">
+  <section className="teal">
     <BlueDownWaves />
     <div className="content">
       <h1 className="allcaps center">{data.about[0].title}</h1>
@@ -16,7 +16,7 @@ const AboutUsSection = ({ data }) => (
         </div>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default AboutUsSection;

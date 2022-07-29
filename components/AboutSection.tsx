@@ -6,7 +6,7 @@ import { DarkBlueDownWaves } from './layout/Waves';
 
 const AboutSection = ({ data }) => {
   return (
-    <div className="flex flex-col teal">
+    <section className="flex flex-col teal">
       <DarkBlueDownWaves />
       <div className="flex flex-v-center two-col flex-mobile-tablet-col-rev">
         <div className="flex flex-center flex-v-center two-col">
@@ -31,14 +31,14 @@ const AboutSection = ({ data }) => {
         </div>
       </div>
 
-      <div className="flex two-col flex-mobile-tablet-col">
+      <div className="flex flex-v-center two-col flex-mobile-tablet-col">
         <div className="flex flex-center one-col">
           <article className="textRight">
             <h1 className="allcaps">Network</h1>
             <p>
               Learn new business acumen from prominent speakers that have build
-              their own companies Make new connections virtually and in real
-              life Pitch their projects to the community
+              their own companies! Pitch projects to the community and make new
+              connections virtually and in real life.
             </p>
           </article>
         </div>
@@ -70,7 +70,7 @@ const AboutSection = ({ data }) => {
           </div>
         </div>
       </section>
-    </div>
+    </section>
   );
 };
 

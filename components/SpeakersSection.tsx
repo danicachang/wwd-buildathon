@@ -25,7 +25,7 @@ const SpeakersSection = ({ data }) => {
           ))}
         </div>
       </section>
-      <div className="teal">
+      <section className="teal">
         <PinkDownWaves />
         <div className="content meet-team">
           {data.speakerCategory.map((category) => (
@@ -47,7 +47,7 @@ const SpeakersSection = ({ data }) => {
             </Link>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

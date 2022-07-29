@@ -6,9 +6,9 @@ import { PinkDownWaves } from './layout/Waves';
 
 const SignUpSection = () => {
   return (
-    <div className="darkBlue">
+    <section className="darkBlue">
       <PinkDownWaves />
-      <div className="content">
+      <div className="content" style={{ paddingBottom: '10%' }}>
         <h1 className="center">Sign up for our event now!</h1>
         <div className="center">
           <Link
@@ -21,7 +21,7 @@ const SignUpSection = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
