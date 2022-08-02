@@ -1,5 +1,4 @@
 import { PortableText } from '@portabletext/react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import outdoors from '../images/Outdoors.png';
@@ -65,7 +64,7 @@ const PartnerSection = ({ data }) => {
                     <img
                       src={urlFor(partner.image).quality(100).url()}
                       alt={partner.name}
-                      width="400px"
+                      width={`${partner.width}px`}
                     />
                   ) : (
                     <img
