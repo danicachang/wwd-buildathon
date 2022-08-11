@@ -6,6 +6,9 @@ const ScheduleSection = ({ data }) => {
       <TealDownWaves />
       <div className="content">
         <h1 className="allcaps center padding-v">Schedule</h1>
+        <h6 className="center padding-v">
+          timings are displayed in your timezone
+        </h6>
         <div>
           <iframe
             src="https://airtable.com/embed/shrrFOJMsFQeN2TsZ?backgroundColor=cyan&viewControls=on"
