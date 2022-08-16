@@ -4,8 +4,11 @@ const TalksComponent = ({ speakers }) => {
   return (
     <>
       {speakers.map((speaker) => (
-        <div className="padding flex flex-start flex-v-start" key={speaker.id}>
-          <div className="circle">
+        <div
+          className="padding flex flex-start flex-v-start flex-mobile-col"
+          key={speaker.id}
+        >
+          <div className="circle flex-mobile-center">
             <img
               src={urlFor(speaker.image.asset)
                 .crop('focalpoint')
@@ -47,14 +50,14 @@ export const Talks = ({ talks }: any) => {
         <div className="content meet-team">
           <h1 className="allcaps center">Speaker Track</h1>
           {talks.specialSpeakerCategory.map((category) => (
-            <>
+            <div key={category._id}>
               <h1 key={category.id}>{category.name}</h1>
               <TalksComponent
                 speakers={talks.speakerTrack.filter((speaker) =>
                   speaker.category.includes(category.name)
                 )}
               />
-            </>
+            </div>
           ))}
         </div>
       </section>

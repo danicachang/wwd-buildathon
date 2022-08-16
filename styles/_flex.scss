@@ -87,3 +87,11 @@
 		order: -1;
 	}
 }
+
+.flex-mobile-center {
+	@include mobile {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+}
