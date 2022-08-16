@@ -5,16 +5,33 @@ const TalksComponent = ({ speakers }) => {
     <>
       {speakers.map((speaker) => (
         <div className="padding flex flex-start flex-v-start" key={speaker.id}>
-          <img
-            src={urlFor(speaker.image.asset).quality(100).url()}
-            alt="{member.name}"
-            className="circle border margin-h"
-            width="100px"
-            height="100px"
-          />
+          <div className="circle">
+            <img
+              src={urlFor(speaker.image.asset)
+                .crop('focalpoint')
+                .quality(100)
+                .url()}
+              alt="{member.name}"
+              className="circle border margin-h"
+              width="200px"
+              height="200px"
+              style={{ objectFit: 'cover' }}
+            />
+            {/* <img
+              src={urlFor(speaker.image.asset).quality(100).url()}
+              alt="{member.name}"
+              className="circle border margin-h"
+              width="100px"
+              height="100px"
+            /> */}
+          </div>
           <div>
-            <h3>{speaker.title}</h3>
-            <h6>by {speaker.name}</h6>
+            <h3>
+              {speaker.title} by {speaker.name}
+            </h3>
+            {speaker.dateTime && (
+              <h5>{new Date(speaker.dateTime).toString()}</h5>
+            )}
             <p>{speaker.description}</p>
           </div>
         </div>
@@ -23,6 +40,7 @@ const TalksComponent = ({ speakers }) => {
   );
 };
 export const Talks = ({ talks }: any) => {
+  console.log(talks);
   return (
     <>
       <section className="pink">
@@ -71,6 +89,7 @@ export const getStaticProps = async () => {
     'speakerTrack': *[_type == "speakerTrack"] | order(lower(speakerCategory) asc, lower(speaker) asc) { 
       "id": _id, 
       title,
+      dateTime,
       description, 
       "name": speaker->name,
       "image": speaker->image,
