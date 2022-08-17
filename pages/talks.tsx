@@ -51,7 +51,7 @@ export const Talks = ({ talks }: any) => {
           <h1 className="allcaps center">Speaker Track</h1>
           {talks.specialSpeakerCategory.map((category) => (
             <div key={category._id}>
-              <h1 key={category.id}>{category.name}</h1>
+              <h1>{category.name}</h1>
               <TalksComponent
                 speakers={talks.speakerTrack.filter((speaker) =>
                   speaker.category.includes(category.name)
@@ -64,14 +64,14 @@ export const Talks = ({ talks }: any) => {
       <section className="teal">
         <div className="content meet-team">
           {talks.speakerCategory.map((category) => (
-            <>
-              <h1 key={category.id}>{category.name}</h1>
+            <div key={category.id}>
+              <h1>{category.name}</h1>
               <TalksComponent
                 speakers={talks.speakerTrack.filter((speaker) =>
                   speaker.category.includes(category.name)
                 )}
               />
-            </>
+            </div>
           ))}
         </div>
       </section>
@@ -89,7 +89,7 @@ export const getStaticProps = async () => {
       "id": _id, 
       "name": category,
     },
-    'speakerTrack': *[_type == "speakerTrack"] | order(lower(speakerCategory) asc, lower(speaker) asc) { 
+    'speakerTrack': *[_type == "speakerTrack"] | order(lower(speakerCategory) asc, lower(speaker) asc, dateTime asc) { 
       "id": _id, 
       title,
       dateTime,
